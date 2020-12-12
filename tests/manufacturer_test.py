@@ -22,3 +22,6 @@ class TestManufacturer (unittest.TestCase):
 
     def test_manufacturer_has_website (self):
         self.assertEqual ('www.subaru.com', self.manufacturer_4.website)
+
+    def test_manufacturer_has_id (self):
+        self.assertEqual (None, self.manufacturer_3.id)
