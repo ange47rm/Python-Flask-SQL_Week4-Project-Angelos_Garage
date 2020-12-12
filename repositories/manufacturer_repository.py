@@ -8,6 +8,7 @@ def save (manufacturer):
     values = [manufacturer.name, manufacturer.phone, manufacturer.email, manufacturer.website]
 
     results = run_sql (sql, values)
+    print (results) ### added for demo purposes
     manufacturer.id = results[0]['id']
     return manufacturer
 
@@ -19,12 +20,12 @@ def select_all ():
     results = run_sql (sql)
 
     for row in results:
-        manufacturer = Manufacturer (row['name'], row['phone'], row['email'], row['email'], row['website'], row['id'])
+        manufacturer = Manufacturer (row['name'], row['phone'], row['email'], row['website'], row['id'])
         manufacturers.append(manufacturer)
     return manufacturers
 
 
-def select_id (id):
+def select (id):
     manufacturer = None
 
     sql = 'SELECT * FROM manufacturers WHERE id = %s'
@@ -33,7 +34,7 @@ def select_id (id):
     result = run_sql (sql, value) [0]
 
     if result is not None:
-        manufacturer = Manufacturer (result['name'], result['phone'], result['email'], result['email'], result['website'], result['id'])
+        manufacturer = Manufacturer (result['name'], result['phone'], result['email'], result['website'], result['id'])
     return manufacturer
 
 

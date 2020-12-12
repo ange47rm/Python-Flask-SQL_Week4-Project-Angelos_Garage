@@ -11,7 +11,8 @@ CREATE TABLE manufacturers (
 
 CREATE TABLE cars (
     id SERIAL PRIMARY KEY,
-    manufacturer_id INT REFERENCES manufacturers(id),
+    manufacturer_id INT REFERENCES manufacturers(id) ON DELETE CASCADE, -- if a manufacturer is deleted, all related cars will be removed too.
+    manufacturer VARCHAR(255),
     model VARCHAR(255),
     engine_size VARCHAR(255),
     colour VARCHAR(255),
