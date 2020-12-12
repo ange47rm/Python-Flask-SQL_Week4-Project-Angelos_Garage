@@ -1,6 +1,6 @@
 import unittest
  
-# from tests.car_test import TestCar
+from tests.car_test import TestCar
 from tests.manufacturer_test import TestManufacturer
  
  
