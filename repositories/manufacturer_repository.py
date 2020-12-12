@@ -42,7 +42,7 @@ def delete_all ():
     run_sql(sql)
 
     
-def update(manufacturer):
+def update (manufacturer):
     sql = 'UPDATE manufactureres SET (name, phone, email, website) VALUES (%s, %s, %s, %s) WHERE id = %s'
     values = [manufacturer.name, manufacturer.phone, manufacturer.email, manufacturer.website]
     run_sql (sql, values)

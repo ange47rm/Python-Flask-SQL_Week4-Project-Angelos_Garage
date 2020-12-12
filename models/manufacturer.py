@@ -1,4 +1,4 @@
-›class Manufacturer ():
+class Manufacturer ():
     def __init__(self, name, phone, email, website, id = None):
         self.name = name
         self.phone = phone
