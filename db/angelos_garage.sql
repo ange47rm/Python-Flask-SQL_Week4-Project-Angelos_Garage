@@ -11,7 +11,7 @@ CREATE TABLE manufacturers (
 
 CREATE TABLE cars (
     id SERIAL PRIMARY KEY,
-    manufacturer_id REFERENCES manufacturers(id),
+    manufacturer_id INT REFERENCES manufacturers(id),
     model VARCHAR(255),
     engine_size VARCHAR(255),
     colour VARCHAR(255),
@@ -19,4 +19,4 @@ CREATE TABLE cars (
     year INT,
     purchase_cost INT,
     selling_price INT
-)
+);
