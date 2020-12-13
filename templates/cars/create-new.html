@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action='/cars' method="POST">
+
+<label for='name'>Manufacturer:</label>
+<select id="name" name="manufacturer_id">
+    {% for manufacturer in all_manufacturers %}
+      <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
+    {% endfor %}
+</select>
+<br><br>
+<label for='phone'>Model:</label>
+<input type='text' id='model' name='model' required>
+<br><br>
+<label for='email'>Engine Size:</label>
+<input type='text' id='engine_size' name='engine_size' placeholder='Example: 2500cc' required>
+<br><br>
+<label for='website'>Colour:</label>
+<input type='text' id='colour' name='colour' required>
+<br><br>
+<label for='website'>Mileage:</label>
+<input type='text' id='mileage' name='mileage' placeholder='in km' required>
+<br><br>
+<label for='website'>Year:</label>
+<input type='text' id='year' name='year' required>
+<br><br>
+<label for='website'>Purchase Cost:</label>
+<input type='text' id='purchase_cost' name='purchase_cost' required>
+<br><br>
+<label for='website'>Selling Price:</label>
+<input type='text' id='selling_price' name='selling_price' required>
+<br><br>
+<button type="submit" class='button'>Add Car</button>
+
+</form>
+
+{% endblock %}
