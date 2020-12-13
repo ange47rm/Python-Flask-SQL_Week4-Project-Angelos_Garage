@@ -15,10 +15,19 @@ def home ():
     return render_template ('index.html', page_title='Stock Management System')
 
 
-@garage_blueprint.route ('/inventory')
-def inventory ():
-    manufacturers = manufacturer_repository.select_all()
+@garage_blueprint.route ('/cars')
+def cars ():
     cars = car_repository.select_all()
-    return render_template ('inventory.html', page_title='Inventory', cars=cars)
+    return render_template ('cars.html', page_title='Cars in stock', cars=cars)
+
+@garage_blueprint.route ('/manufacturers')
+def manufacturers ():
+    manufacturers = manufacturer_repository.select_all()
+    return render_template ('manufacturers.html', page_title='Manufacturers', manufacturers=manufacturers)
+
+
+@garage_blueprint.route ('/manage')
+def manage ():
+    return render_template ('manage.html', page_title='Manage Stock')
 
     

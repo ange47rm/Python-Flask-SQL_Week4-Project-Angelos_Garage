@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<table>
+
+<tr><th>Manufacturer</th><th>Phone</th><th>Email<th>Website</th></tr>
+{% for manufacturer in manufacturers %}
+<tr><td>{{manufacturer.name}}</td><td>{{manufacturer.phone}}</td><td><a href=''>{{manufacturer.email}}</a></td><td><a href=''>{{manufacturer.website}}</a></td></tr>
+{% endfor %}
+
+</table>
+
+<a href='/manage' id='manage-link'>Manage Stock</a><br>
+
+{% endblock %}
