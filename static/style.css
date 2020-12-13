@@ -1,0 +1,7 @@
+#garage-image {
+    width:50vw;
+    height:50vh;
+    background-image: url('images/garage.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

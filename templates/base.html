@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Angelo's Garage</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href='/home'>Home</a></li>
+                <li><a href='/inventory'>Inventory</a></li>
+                <li><a href='/manage'>Manage</a></li>
+            </ul>
+        </nav>
+        <h1>Angelo's Garage</h1>
+        <h3>{{page_title}}</h3>
+    </header>
+<hr>
+<main>
+<div class='page_container'>
+{% block content %}
+{% endblock %}
+</main>
+</body>
+</html>
