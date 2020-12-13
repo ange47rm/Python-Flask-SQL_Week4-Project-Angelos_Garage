@@ -54,7 +54,7 @@ def create_manufacturer():
     name = request.form ['name']
     phone = request.form ['phone']
     email = request.form ['email']
-    website = request.form ['email']
+    website = request.form ['website']
     manufacturer = Manufacturer (name, phone, email, website)
     manufacturer_repository.save(manufacturer)
     return redirect ('/manufacturers')
@@ -79,3 +79,21 @@ def create_car ():
     car = Car (manufacturer, model, engine_size, colour, mileage, year, purchase_cost, selling_price)
     car_repository.save(car)
     return redirect('/cars')
+
+
+@garage_blueprint.route ('/manufacturers/<id>/edit')
+def edit_manufacturer(id):
+    manufacturer = manufacturer_repository.select(id)
+    return render_template ('manufacturers/edit.html', manufacturer=manufacturer)
+
+
+@garage_blueprint.route ('/manufacturers/<id>', methods=['POST'])
+def update_manufacturer (id):
+    name = request.form ['name']
+    phone = request.form ['phone']
+    email = request.form ['email']
+    website = request.form ['website']
+    manufacturer = Manufacturer (name, phone, email, website, id)
+    print (manufacturer.__dict__)
+    manufacturer_repository.update(manufacturer)
+    return redirect ('/manufacturers')
