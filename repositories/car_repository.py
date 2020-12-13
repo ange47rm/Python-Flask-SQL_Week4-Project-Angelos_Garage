@@ -25,12 +25,11 @@ def select_all ():
     for row in results:
         manufacturer = manufacturer_repository.select(row['id'])
         car = Car (manufacturer, row['model'], row['engine_size'], row['colour'], row['mileage'], row['year'], row['purchase_cost'], row['selling_price'], row['id'])
-        # maybe it should be manufacturer.name???
         cars.append(car)
     return cars
 
 
-def select_id (id):
+def select (id):
     car = None
 
     sql = 'SELECT * FROM cars WHERE id = %s'
@@ -40,7 +39,6 @@ def select_id (id):
     if result is not None:
         manufacturer = manufacturer_repository.select(result['manufacturer_id'])
         car = Car (manufacturer, result['model'], result['engine_size'], result['colour'], result['mileage'], result['year'], result['purchase_cost'], result['selling_price'], result['id'])
-        # maybe it should be manufacturer.name???
     return car
 
 
@@ -51,7 +49,7 @@ def delete_all ():
 
 def update (car):
     sql = 'UPDATE cars SET (manufacturer_id, manufacturer, model, engine_size, colour, mileage, year, purchase_cost, selling_price) = (%s, %s, %s, %s, %s, %s, %s, %s, %s) WHERE id %s'
-    values = [car.manufacturer.id, car.manufacturer, car.model, car.engine_size, car.colour, car.mileage, car.year, car.purchase_cost, car.selling_price]
+    values = [car.manufacturer.id, car.manufacturer, car.model, car.engine_size, car.colour, car.mileage, car.year, car.purchase_cost, car.selling_price, car.id]
     
     print (values)
     run_sql (sql,values)

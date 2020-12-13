@@ -23,7 +23,7 @@ def cars ():
 
 @garage_blueprint.route ('/cars/<id>')
 def show_car (id):
-    car = car_repository.select_id(id)
+    car = car_repository.select(id)
     return render_template ('cars/show.html', car=car)
 
 
@@ -97,3 +97,25 @@ def update_manufacturer (id):
     print (manufacturer.__dict__)
     manufacturer_repository.update(manufacturer)
     return redirect ('/manufacturers')
+
+
+@garage_blueprint.route ('/cars/<id>/edit')
+def edit_car(id):
+    car = car_repository.select(id)
+    manufacturers = manufacturer_repository.select_all()
+    return render_template ('cars/edit.html', car=car, all_manufacturers=manufacturers)
+
+
+@garage_blueprint.route ('/cars/<id>', methods=['POST'])
+def update_car(id):
+    manufacturer = manufacturer_repository.select(request.form['manufacturer_id'])
+    model = request.form['model']
+    engine_size = request.form['engine_size']
+    colour = request.form['colour']
+    mileage = request.form['mileage']
+    year = request.form['year']
+    purchase_cost = request.form['purchase_cost']
+    selling_price = request.form['selling_price']
+    car = Car (manufacturer, model, engine_size, colour, mileage, year, purchase_cost, selling_price, id)
+    car_repository.update(car)
+    return redirect ('/cars')
