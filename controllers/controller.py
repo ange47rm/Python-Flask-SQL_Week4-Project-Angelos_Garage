@@ -18,12 +18,25 @@ def home ():
 @garage_blueprint.route ('/cars')
 def cars ():
     cars = car_repository.select_all()
-    return render_template ('cars.html', page_title='Cars in stock', cars=cars)
+    return render_template ('cars/cars.html', page_title='Cars in stock', cars=cars)
+
+
+@garage_blueprint.route ('/cars/<id>')
+def show_car (id):
+    car = car_repository.select_id(id)
+    return render_template ('cars/show.html', car=car)
+
 
 @garage_blueprint.route ('/manufacturers')
 def manufacturers ():
     manufacturers = manufacturer_repository.select_all()
-    return render_template ('manufacturers.html', page_title='Manufacturers', manufacturers=manufacturers)
+    return render_template ('manufacturers/manufacturers.html', page_title='Manufacturers', manufacturers=manufacturers)
+
+@garage_blueprint.route ('/manufacturers/<id>')
+def show_manufacturer (id):
+    manufacturer = manufacturer_repository.select(id)
+    return render_template ('manufacturers/show.html', manufacturer=manufacturer)
+
 
 
 @garage_blueprint.route ('/manage')

@@ -6,11 +6,13 @@
 <table>
 <tr><th>Manufacturer</th><th>Model</th><th>Engine Size</th><th>Colour</th><th>Mileage</th><th>Year</th><th>Purchase Cost</th><th>Selling Price</th></tr>
 {% for car in cars %}
-<tr><td>{{car.manufacturer.name}}</td><td>{{car.model}}</td><td>{{car.engine_size}}</td><td>{{car.colour}}</td><td>{{car.mileage}}</td><td>{{car.year}}</td><td>{{car.purchase_cost}}</td><td>{{car.selling_price}}</td></tr>
+<tr><td>{{car.manufacturer.name}}</td><td><a href='/cars/{{car.id}}'>{{car.model}}</a></td><td>{{car.engine_size}}</td><td>{{car.colour}}</td><td>{{car.mileage}}</td><td>{{car.year}}</td><td>{{car.purchase_cost}}</td><td>{{car.selling_price}}</td></tr>
 {% endfor %}
 
 </table>
-
+<br>
+<br>
+<br>
 <a href='/manage' id='manage-link'>Manage Stock</a><br>
 
 {% endblock %}

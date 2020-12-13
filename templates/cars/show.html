@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class='info'>
+<h4>Manufacturer: {{car.manufacturer.name}}</h4>
+<h4>Model: {{car.model}}</h4>
+<h4>Engine Size: {{car.engine_size}}</h4>
+<h4>Colour: {{car.colour}}</h4>
+<h4>Mileage: {{car.mileage}}</h4>
+<h4>Year: {{car.year}}</h4>
+<h4>Purchase Cost:{{car.purchase_cost}}</h4>
+<h4>Selling Price: {{car.selling_price}}</h4>
+</div>
+
+<h4>PHOTOS ON THE RIGHT</h4>
+
+{% endblock %}
