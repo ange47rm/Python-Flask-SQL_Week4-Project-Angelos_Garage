@@ -23,7 +23,7 @@ for manufacturer in manufacturers:
 car_1 = Car (manufacturer_1, 'RX7', '1300cc', 'White', 54000, 1989, 9500, 12000)
 car_2 = Car (manufacturer_2, '1750 GT Veloce', '1800cc', 'Red', 75000, 1971, 34000, 45000)
 car_3 = Car (manufacturer_3, '240Z', '2400cc', 'Orange', 31000, 1970, 17500, 26000)
-car_4 = Car (manufacturer_4, 'Impreza', '2000cc', 'Blue', 130000, 1999, 6750, 9500)
+car_4 = Car (manufacturer_4, 'Impreza WRX STi', '2000cc', 'Blue', 130000, 1999, 6750, 9500)
 
 cars = [car_1, car_2, car_3, car_4]
 for car in cars:

@@ -1,18 +1,13 @@
 from flask import Flask, render_template
-
-# from controllers.manufacturers_controller import manufacturer_blueprint
-# from controllers.cars_controller import cars_blueprint
-
+from controllers.controller import garage_blueprint
 
 app = Flask (__name__)
 
-# app.register_blueprint (manufacturer_blueprint)
-# app.register_blueprint (cars_blueprint)
+app.register_blueprint(garage_blueprint)
 
-
-@app.route ('/home')
+@app.route ('/')
 def home ():
-    return render_template ('index.html', page_title='Stock Management System')
+    return render_template ('landing.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
