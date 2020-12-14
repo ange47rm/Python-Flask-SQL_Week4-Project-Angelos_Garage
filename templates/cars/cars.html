@@ -7,6 +7,13 @@
 <tr><th>Manufacturer</th><th>Model</th><th>Engine Size</th><th>Colour</th><th>Mileage</th><th>Year</th><th>Purchase Cost</th><th>Selling Price</th></tr>
 {% for car in cars %}
 <tr><td>{{car.manufacturer.name}}</td><td><a href='/cars/{{car.id}}'>{{car.model}}</a></td><td>{{car.engine_size}}</td><td>{{car.colour}}</td><td>{{car.mileage}}</td><td>{{car.year}}</td><td>{{car.purchase_cost}}</td><td>{{car.selling_price}}</td></tr>
+
+<form class="delete-form" action="/cars/{{car.id}}/delete" method="POST">
+<button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+
+
+    
+</form>
 {% endfor %}
 
 </table>

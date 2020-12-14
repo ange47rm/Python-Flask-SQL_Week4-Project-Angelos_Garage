@@ -120,3 +120,15 @@ def update_car(id):
     car = Car (manufacturer_id, model, engine_size, colour, mileage, year, purchase_cost, selling_price, id)
     car_repository.update(car)
     return redirect ('/cars')
+
+
+@garage_blueprint.route("/cars/<id>/delete", methods=['POST'])
+def delete_car(id):
+    car_repository.delete(id)
+    return redirect('/cars')
+
+
+@garage_blueprint.route("/manufacturers/<id>/delete", methods=['POST'])
+def delete_manufacturer(id):
+    manufacturer_repository.delete(id)
+    return redirect('/manufacturers')

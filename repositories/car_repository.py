@@ -47,9 +47,17 @@ def delete_all ():
     run_sql (sql)
 
 
+def delete(id):
+    sql = "DELETE  FROM cars WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+
 def update (car):
     sql = 'UPDATE cars SET (manufacturer_id, model, engine_size, colour, mileage, year, purchase_cost, selling_price) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s'
     values = [car.manufacturer.id, car.model, car.engine_size, car.colour, car.mileage, car.year, car.purchase_cost, car.selling_price, car.id]
     
     print (values)
     run_sql (sql,values)
+
+
