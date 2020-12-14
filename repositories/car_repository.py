@@ -48,8 +48,8 @@ def delete_all ():
 
 
 def update (car):
-    sql = 'UPDATE cars SET (manufacturer_id, manufacturer, model, engine_size, colour, mileage, year, purchase_cost, selling_price) = (%s, %s, %s, %s, %s, %s, %s, %s, %s) WHERE id %s'
-    values = [car.manufacturer.id, car.manufacturer, car.model, car.engine_size, car.colour, car.mileage, car.year, car.purchase_cost, car.selling_price, car.id]
+    sql = 'UPDATE cars SET (manufacturer_id, model, engine_size, colour, mileage, year, purchase_cost, selling_price) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s'
+    values = [car.manufacturer.id, car.model, car.engine_size, car.colour, car.mileage, car.year, car.purchase_cost, car.selling_price, car.id]
     
     print (values)
     run_sql (sql,values)
