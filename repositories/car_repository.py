@@ -23,7 +23,7 @@ def select_all ():
     results = run_sql (sql)
 
     for row in results:
-        manufacturer = manufacturer_repository.select(row['id'])
+        manufacturer = manufacturer_repository.select(row['manufacturer_id'])
         car = Car (manufacturer, row['model'], row['engine_size'], row['colour'], row['mileage'], row['year'], row['purchase_cost'], row['selling_price'], row['id'])
         cars.append(car)
     return cars

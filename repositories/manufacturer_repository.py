@@ -31,7 +31,7 @@ def select (id):
     sql = 'SELECT * FROM manufacturers WHERE id = %s'
     value = [id]
 
-    result = run_sql (sql, value) [0]
+    result = run_sql (sql, value)[0]
 
     if result is not None:
         manufacturer = Manufacturer (result['name'], result['phone'], result['email'], result['website'], result['id'])
