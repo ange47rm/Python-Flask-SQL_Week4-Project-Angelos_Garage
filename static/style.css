@@ -6,6 +6,38 @@
     background-repeat: no-repeat;
 }
 
+body {
+    margin: 200px;
+}
+
+body > header > nav {
+    background-color: rgb(111, 29, 27);
+    padding: 50px;
+}
+
+body > header > nav >ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+body > header {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* .trash-button{
     display: contents;
     font-size: 65%;
