@@ -102,6 +102,7 @@ def update_manufacturer (id):
 @garage_blueprint.route ('/cars/<id>/edit')
 def edit_car(id):
     car = car_repository.select(id)
+    # manufacturer = manufacturer_repository.select(id) - This was to hopefully get the current manufacturer to show for the product being edited without it defaulting to the top of the list.
     manufacturers = manufacturer_repository.select_all()
     return render_template ('cars/edit.html', car=car, all_manufacturers=manufacturers)
 

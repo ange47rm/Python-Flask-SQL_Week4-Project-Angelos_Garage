@@ -5,21 +5,27 @@
 <label for='name'>Manufacturer:</label>
 <select id="name" name="manufacturer_id">
 {% for manufacturer in all_manufacturers %}
-    <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
+    <option value="{{ manufacturer.id }}"
+    {% if car.manufacturer.id == manufacturer.id %} selected='selected' {% endif %}>
+    {{ manufacturer.name }}
+    </option>
 {% endfor %}
 </select>
+
+
+
 <br><br>
 <label for='model'>Model:</label>
 <input type='text' id='model' name='model' value={{car.model}} required>
 <br><br>
 <label for='engine_size'>Engine Size:</label>
-<input type='text' id='engine_size' name='engine_size' value={{car.engine_size}} placeholder='Example: 2500cc' required>
+<input type='text' id='engine_size' name='engine_size' value={{car.engine_size}} required>
 <br><br>
 <label for='colour'>Colour:</label>
 <input type='text' id='colour' name='colour' value={{car.colour}} required>
 <br><br>
 <label for='mileage'>Mileage:</label>
-<input type='text' id='mileage' name='mileage' value={{car.mileage}} placeholder='in km' required>
+<input type='text' id='mileage' name='mileage' value={{car.mileage}}required>
 <br><br>
 <label for='year'>Year:</label>
 <input type='text' id='year' name='year' value={{car.year}} required>
