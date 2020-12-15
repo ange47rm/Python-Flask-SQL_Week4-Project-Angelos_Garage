@@ -3,20 +3,24 @@
 
 <form class='edit-form' action='/manufacturers/{{manufacturer.id}}' method="POST">
 
-<label for='name'>Name:</label>
-<input type='text' id='name' name='name' value='{{manufacturer.name}}' required>
-<br><br>
-<label for='phone'>Phone:</label>
-<input type='text' id='phone' name='phone' value='{{manufacturer.phone}}' required>
-<br><br>
-<label for='email'>Email:</label>
-<input type='text' id='email' name='email' value='{{manufacturer.email}}' required>
-<br><br>
-<label for='website'>Website:</label>
-<input type='text' id='website' name='website' value='{{manufacturer.website}}' required>
-<br><br>
-<button type="submit" class='button'>Submit changes</button>
-<br><br>
+<table>
+
+<tr><th><label for='name'>Name:</label></th>
+<td><input type='text' id='name' name='name' value='{{manufacturer.name}}' required></td>
+
+<tr><th><label for='phone'>Phone:</label></th>
+<td><input type='text' id='phone' name='phone' value='{{manufacturer.phone}}' required></td>
+
+<tr><th><label for='email'>Email:</label></th>
+<td><input type='text' id='email' name='email' value='{{manufacturer.email}}' required></td>
+
+<tr><th><label for='website'>Website:</label></th>
+<td><input type='text' id='website' name='website' value='{{manufacturer.website}}' required></td>
+
+</table>
+
+<button type="submit" class='sexy-button'>Submit changes</button>
+
 </form>
 
 {% endblock %}

@@ -40,7 +40,7 @@ def create_manufacturer():
 @manufacturer_blueprint.route ('/manufacturers/<id>/edit')
 def edit_manufacturer(id):
     manufacturer = manufacturer_repository.select(id)
-    return render_template ('manufacturers/edit.html', manufacturer=manufacturer)
+    return render_template ('manufacturers/edit.html', page_title='EDIT DETAILS', manufacturer=manufacturer)
 
 
 @manufacturer_blueprint.route ('/manufacturers/<id>', methods=['POST'])

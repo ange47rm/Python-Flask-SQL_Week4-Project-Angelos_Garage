@@ -48,7 +48,7 @@ def edit_car(id):
     car = car_repository.select(id)
     # manufacturer = manufacturer_repository.select(id) - This was to hopefully get the current manufacturer to show for the product being edited without it defaulting to the top of the list.
     manufacturers = manufacturer_repository.select_all()
-    return render_template ('cars/edit.html', car=car, all_manufacturers=manufacturers)
+    return render_template ('cars/edit.html', car=car, page_title='EDIT DETAILS', all_manufacturers=manufacturers)
 
 
 @car_blueprint.route ('/cars/<id>', methods=['POST'])

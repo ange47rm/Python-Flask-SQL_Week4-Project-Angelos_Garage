@@ -2,41 +2,43 @@
 {% block content %}
     
 <form class='edit-form' action='/cars/{{car.id}}' method="POST">
-<label for='name'>Manufacturer:</label>
-<select id="name" name="manufacturer_id">
+
+<table>
+<tr><th><label for='name'>Manufacturer:</label></th>
+<td><select id="name" name="manufacturer_id">
 {% for manufacturer in all_manufacturers %}
     <option value="{{ manufacturer.id }}"
     {% if car.manufacturer.id == manufacturer.id %} selected='selected' {% endif %}>
     {{ manufacturer.name }}
     </option>
 {% endfor %}
-</select>
+</select></td></tr>
 
 
+<tr><th><label for='model'>Model:</label></th>
+<td><input type='text' id='model' name='model' value={{car.model}} required></td></tr>
 
-<br><br>
-<label for='model'>Model:</label>
-<input type='text' id='model' name='model' value={{car.model}} required>
-<br><br>
-<label for='engine_size'>Engine Size:</label>
-<input type='text' id='engine_size' name='engine_size' value={{car.engine_size}} required>
-<br><br>
-<label for='colour'>Colour:</label>
-<input type='text' id='colour' name='colour' value={{car.colour}} required>
-<br><br>
-<label for='mileage'>Mileage:</label>
-<input type='text' id='mileage' name='mileage' value={{car.mileage}} required>
-<br><br>
-<label for='year'>Year:</label>
-<input type='text' id='year' name='year' value={{car.year}} required>
-<br><br>
-<label for='purchase_cost'>Purchase Cost:</label>
-<input type='text' id='purchase_cost' name='purchase_cost' value={{car.purchase_cost}} required>
-<br><br>
-<label for='selling_price'>Selling Price:</label>
-<input type='text' id='selling_price' name='selling_price' value={{car.selling_price}}  required>
-<br><br>
-<button type="submit" class='button'>Submit changes</button>
+<tr><th><label for='engine_size'>Engine Size:</label></th>
+<td><input type='text' id='engine_size' name='engine_size' value={{car.engine_size}} required></td></tr>
+
+<tr><th><label for='colour'>Colour:</label></th>
+<td><input type='text' id='colour' name='colour' value={{car.colour}} required></td></tr>
+
+<tr><th><label for='mileage'>Mileage:</label></th>
+<td><input type='text' id='mileage' name='mileage' value={{car.mileage}} required></td></tr>
+
+<tr><th><label for='year'>Year:</label></th>
+<td><input type='text' id='year' name='year' value={{car.year}} required></td></tr>
+
+<tr><th><label for='purchase_cost'>Purchase Cost:</label></th>
+<td><input type='text' id='purchase_cost' name='purchase_cost' value={{car.purchase_cost}} required></td></tr>
+
+<tr><th><label for='selling_price'>Selling Price:</label></th>
+<td><input type='text' id='selling_price' name='selling_price' value={{car.selling_price}}  required></td></tr>
+
+</table>
+
+<button type="submit" class='sexy-button'>Submit changes</button>
 
 </form>
 
