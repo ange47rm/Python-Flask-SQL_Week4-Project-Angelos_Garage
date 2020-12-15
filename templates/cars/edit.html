@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     
-<form action='/cars/{{car.id}}' method="POST">
+<form class='edit-form' action='/cars/{{car.id}}' method="POST">
 <label for='name'>Manufacturer:</label>
 <select id="name" name="manufacturer_id">
 {% for manufacturer in all_manufacturers %}

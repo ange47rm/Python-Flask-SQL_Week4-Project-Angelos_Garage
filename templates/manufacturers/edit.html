@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form action='/manufacturers/{{manufacturer.id}}' method="POST">
+<form class='edit-form' action='/manufacturers/{{manufacturer.id}}' method="POST">
 
 <label for='name'>Name:</label>
 <input type='text' id='name' name='name' value='{{manufacturer.name}}' required>
