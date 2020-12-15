@@ -161,3 +161,11 @@ body > header > nav >ul {
     justify-content: center;
     margin: 10px 500px 20px 300px;
 }
+
+#low-mileage {
+    color: green;
+}
+
+#high-mileage {
+    color: red;
+}
