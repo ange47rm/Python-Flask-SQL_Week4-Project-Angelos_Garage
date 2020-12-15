@@ -11,8 +11,8 @@
     <td>{{car.engine_size}}</td><td>{{car.colour}}</td>
     <td>{{car.mileage}}</td><td>{{car.year}}</td>
     <td>{{car.purchase_cost}}</td><td>{{car.selling_price}}</td>
-    <td><a href='/cars/{{car.id}}/edit'><button class='buttons'>Edit</button></a></td>
-    <td><form action="cars/{{car.id}}/delete" method="POST"><button class='buttons'>Delete</button></form></td></tr>
+    <td><a href='/cars/{{car.id}}/edit'><button class='sexy-button'>Edit</button></a></td>
+    <td><form action="cars/{{car.id}}/delete" method="POST"><button class='sexy-button'>Delete</button></form></td></tr>
 
 
 
@@ -22,8 +22,7 @@
 
 </table>
 <br>
-<br>
-<br>
-<a href='/cars/create-new'>Add new car</a><br>
+
+<a href='/cars/create-new' class='sexy-button bottom-links'>Add new car</a><br>
 
 {% endblock %}
