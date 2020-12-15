@@ -5,6 +5,7 @@ body {
     background-color: rgb(255, 236, 209);
     border: 5px solid rgb(120, 41, 15);
     border-radius: 20px;
+    margin: 20px 150px 20px 150px;
 }
 
 table {
@@ -64,11 +65,9 @@ body > header > nav >ul {
     grid-template-areas:
     'header header header'
     'img1 img2 img3'
-    'img4 img5 img6'
-    'aboutimage about about';
+    'img4 img5 img6';
     justify-items: center;
     align-items: center;
-    grid-auto-flow: row;
 }
 
 .gallery > h2 {
@@ -118,24 +117,26 @@ body > header > nav >ul {
     margin: 5px;
 }
 
-#about-image {
+#about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#about > img {
+    border-radius: 50%;
     max-width: 100%;
     height: auto;
-    grid-area: aboutimage;
-    border-radius: 50%;
-    margin: 50px 20px 30px 50px;
+    margin: 100px 30px 30px 30px;
+
 }
 
-#about {
-    grid-area: about;
-    background-color: white;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 50px 50px 30px 10px;
-    text-align: center;
+#about > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-
 
 .sexy-button {
     color: white;
@@ -160,23 +161,3 @@ body > header > nav >ul {
     justify-content: center;
     margin: 10px 500px 20px 300px;
 }
-
-/* #home {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: stretch;
-
-}
-
-#garage-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50px;
-    padding: 10px;
-}
-
-#about {
-    padding: 10px;
-    color: rgb(0, 21, 36);
-} */
