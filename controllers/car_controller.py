@@ -13,7 +13,7 @@ car_blueprint = Blueprint ('car', __name__)
 @car_blueprint.route ('/cars')
 def cars ():
     cars = car_repository.select_all()
-    return render_template ('cars/cars.html', page_title='Cars in stock', cars=cars)
+    return render_template ('cars/cars.html', page_title='CARS IN STOCK', cars=cars)
 
 
 @car_blueprint.route ('/cars/<id>')

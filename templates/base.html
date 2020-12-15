@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Angelo's Garage</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">    <title>Angelo's Garage</title>
 </head>
 <body>
     <header>
+        <div>
+            <h1>Angelo's Garage</h1>
+            <h3>{{page_title}}</h3>
+        </div>
         <nav>
             <ul>
-                <li><a href='/'>Home</a></li>
-                <li><a href='/cars'>Cars</a></li>
-                <li><a href='/manufacturers'>Manufacturers</a></li>
+                <li><a href='/' class='sexy-button'>Home</a></li>
+                <li><a href='/cars' class='sexy-button'>Cars</a></li>
+                <li><a href='/manufacturers' class='sexy-button'>Manufacturers</a></li>
             </ul>
         </nav>
-        <h1>Angelo's Garage</h1>
-        <h3>{{page_title}}</h3>
+
     </header>
 <hr>
+<br>
 <main>
-<div class='page_container'>
-
-
 {% block content %}
 {% endblock %}
-
-</div>
 </main>
+
 </body>
 </html>

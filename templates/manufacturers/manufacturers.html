@@ -5,13 +5,16 @@
 
 <table>
 
-<tr><th>Manufacturer</th><th>Phone</th><th>Email<th>Website</th></tr>
+<tr><th>Manufacturer</th><th>Phone</th><th>Email<th>Website</th><th colspan="2">Actions</th></tr>
 
 {% for manufacturer in manufacturers %}
-<tr><td><a href='/manufacturers/{{manufacturer.id}}'>{{manufacturer.name}}</a></td><td>{{manufacturer.phone}}</td><td><a href=''>{{manufacturer.email}}</a></td><td><a href=''>{{manufacturer.website}}</a></td></tr>
+<tr><td><a href='/manufacturers/{{manufacturer.id}}'>{{manufacturer.name}}</a></td>
+    <td>{{manufacturer.phone}}</td>
+    <td><a href=''>{{manufacturer.email}}</a></td>
+    <td><a href=''>{{manufacturer.website}}</a></td>
+    <td><a href='/manufacturers/{{manufacturer.id}}/edit'><button class='buttons'>Edit</button></a></td>
+    <td><form action="manufacturers/{{manufacturer.id}}/delete" method="POST"><button class='buttons'>Delete</button></form></td></tr>
 
-<form class="delete-form" action="/manufacturers/{{manufacturer.id}}/delete" method="POST">
-    <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
 {% endfor %}
 
 </table>

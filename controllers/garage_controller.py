@@ -12,7 +12,7 @@ garage_blueprint = Blueprint ('garage', __name__)
 
 @garage_blueprint.route ('/')
 def home ():
-    return render_template ('index.html', page_title='Stock Management System')
+    return render_template ('index.html', page_title='STOCK MANAGEMENT SYSTEM')
 
 
 # @garage_blueprint.route ('/cars')
