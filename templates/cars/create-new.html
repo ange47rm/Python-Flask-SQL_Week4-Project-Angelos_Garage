@@ -1,37 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form action='/cars' method="POST">
+<form class='edit-form' action='/cars' method="POST">
 
-<label for='name'>Manufacturer:</label>
-<select id="name" name="manufacturer_id">
+<table>
+
+  <tr><th><label for='name'>Manufacturer:</label>
+    <td><select id="name" name="manufacturer_id">
     {% for manufacturer in all_manufacturers %}
       <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
     {% endfor %}
-</select>
-<br><br>
-<label for='phone'>Model:</label>
-<input type='text' id='model' name='model' required>
-<br><br>
-<label for='email'>Engine Size:</label>
-<input type='text' id='engine_size' name='engine_size' placeholder='Example: 2500cc' required>
-<br><br>
-<label for='website'>Colour:</label>
-<input type='text' id='colour' name='colour' required>
-<br><br>
-<label for='website'>Mileage:</label>
-<input type='text' id='mileage' name='mileage' placeholder='in km' required>
-<br><br>
-<label for='website'>Year:</label>
-<input type='text' id='year' name='year' required>
-<br><br>
-<label for='website'>Purchase Cost:</label>
-<input type='text' id='purchase_cost' name='purchase_cost' required>
-<br><br>
-<label for='website'>Selling Price:</label>
-<input type='text' id='selling_price' name='selling_price' required>
-<br><br>
-<button type="submit" class='button'>Add Car</button>
+</select></td></tr>
+
+<tr><th><label for='phone'>Model:</label></th>
+  <td><input type='text' id='model' name='model' required></td></tr>
+
+<tr><th><label for='email'>Engine Size:</label></th>
+  <td><input type='text' id='engine_size' name='engine_size' placeholder='Example: 2500cc' required></td></tr>
+
+<tr><th><label for='website'>Colour:</label></th>
+  <td><input type='text' id='colour' name='colour' required></td></tr>
+
+<tr><th><label for='website'>Mileage:</label></th>
+  <td><input type='text' id='mileage' name='mileage' placeholder='in km' required></td></tr>
+
+<tr><th><label for='website'>Year:</label></th>
+  <td><input type='text' id='year' name='year' required></td></tr>
+
+<tr><th><label for='website'>Purchase Cost:</label></th>
+  <td><input type='text' id='purchase_cost' name='purchase_cost' required></td></tr>
+
+<tr><th><label for='website'>Selling Price:</label></th>
+  <td><input type='text' id='selling_price' name='selling_price' required></td></tr>
+
+</table>
+
+<button type="submit" class='sexy-button'>Add car</button>
 
 </form>
 
