@@ -155,8 +155,13 @@ body > header > nav >ul {
     text-align: center;
 }
 
-.info {
+
+.info-container {
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .bottom-links {
