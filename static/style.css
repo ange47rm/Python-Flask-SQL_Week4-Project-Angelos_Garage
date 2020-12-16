@@ -73,6 +73,7 @@ body > header > nav >ul {
 .gallery > h2 {
     grid-area: header;
     padding-bottom: 10px;
+    color: rgb(0, 21, 36);
 }
 
 #img1 {
