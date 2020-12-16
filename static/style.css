@@ -3,7 +3,7 @@ body {
 
     font-family: 'Lobster', cursive;
     background-color: rgb(255, 236, 209);
-    border: 5px solid rgb(120, 41, 15);
+    border: 5px solid rgb(21, 97, 109);
     border-radius: 20px;
     margin: 20px 150px 20px 150px;
 }
@@ -39,7 +39,7 @@ body > header {
 body > header > div {
     color: white;
     font-size: large;
-    background-color: rgb(21, 97, 109);
+    background-color:  rgb(120, 41, 15);
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
@@ -72,6 +72,7 @@ body > header > nav >ul {
 
 .gallery > h2 {
     grid-area: header;
+    padding-bottom: 10px;
 }
 
 #img1 {
@@ -117,6 +118,11 @@ body > header > nav >ul {
     margin: 5px;
 }
 
+#garage-image {
+    max-width: 100%;
+    height: auto;
+}
+
 #about {
     display: flex;
     flex-direction: row;
@@ -138,11 +144,15 @@ body > header > nav >ul {
     align-items: center;
 }
 
+#header {
+    padding: 0px 150px 0px 150px;
+}
+
 .sexy-button {
     color: white;
     text-decoration: none;
     font-size: large;
-    background-color: rgb(21, 97, 109);
+    background-color: rgb(120, 41, 15);
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
@@ -160,7 +170,7 @@ body > header > nav >ul {
     text-align: center;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -168,7 +178,7 @@ body > header > nav >ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin: 10px 500px 20px 300px;
+
 }
 
 #low-mileage {

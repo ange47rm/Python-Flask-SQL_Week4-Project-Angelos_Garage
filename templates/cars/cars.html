@@ -2,7 +2,7 @@
 {% block content %}
 
 
-
+<div class='info-container'>
 <table>
 <tr><th>Manufacturer</th><th>Model</th><th>Engine Size</th><th>Colour</th><th>Mileage</th><th>Year</th><th>Purchase Cost</th><th>Selling Price</th><th colspan="2">Actions</th></tr>
 {% for car in cars %}
@@ -27,4 +27,6 @@
 </table>
 <br>
 <a href='/cars/create-new' class='sexy-button bottom-links'>Add new car</a><br>
+</div>
+
 {% endblock %}
