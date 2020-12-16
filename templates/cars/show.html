@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<table>
+
 <div class='info'>
 <h4>Manufacturer: {{car.manufacturer.name}}</h4>
 <h4>Model: {{car.model}}</h4>
@@ -12,7 +14,8 @@
 <h4>Selling Price: {{car.selling_price}}</h4>
 </div>
 
-<h4>PHOTOS ON THE RIGHT</h4>
+</table>
+
 
 <a href='/cars/{{car.id}}/edit'>Edit details</a>
 
