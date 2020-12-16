@@ -37,7 +37,7 @@ body > header {
     border-radius: 10px;
     align-items: center;
     margin: 10px 10px;
-    border: 15px solid  white;
+    border: 10px solid  white;
 }
 
 body > header > div {
@@ -56,8 +56,8 @@ body > header > div {
 body > header > nav {
     flex-direction: column;
     justify-content: space-around;
+    color: white;
     padding: 10px;
-    color: rgb(255, 236, 209);
     width: 100%;
     height: auto;
 }
