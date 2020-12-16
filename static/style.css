@@ -2,6 +2,7 @@ body {
     font-family: 'Lobster', cursive;
     background-color: rgb(255, 236, 209);
     border: 10px solid rgb(120, 41, 15);
+    background-image: url(images/noise.png);
     border-radius: 20px;
     margin: 20px 150px 20px 150px;
     padding: 30px;
