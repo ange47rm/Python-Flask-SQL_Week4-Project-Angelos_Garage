@@ -29,15 +29,15 @@ body > header {
     justify-content: space-around;
     background-color: rgb(0, 21, 36);
     font-size: large;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
     align-items: center;
-    margin: 10px 10px;
+    margin: 10px 10px; 
 }
 
 body > header > div {
     color: white;
-    font-size: large;
+    font-size: x-large;
     background-color:  rgb(120, 41, 15);
     padding: 10px;
     margin: 10px;
@@ -46,17 +46,23 @@ body > header > div {
     text-shadow: 2px 2px black;
 }
 
-/* body > header > nav {
-    background-color: rgb(120, 41, 15);
-    padding: 50px;
-} */
+body > header > nav {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    color: rgb(255, 236, 209);
+}
 
 body > header > nav >ul {
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items:
+}
+
+body > header > nav > section {
+    text-align: center;
+    margin-top: 50px;
 }
 
 .gallery {
@@ -75,6 +81,37 @@ body > header > nav >ul {
     color: rgb(0, 21, 36);
 }
 
+.sexy-button {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    background-color: rgb(120, 41, 15);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 5px solid rgb(255, 125, 0);
+    font-family: 'Lobster', cursive;
+    text-shadow: 2px 2px black;
+}
+
+.edit-form {
+    text-align: center;
+}
+
+.info-container {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bottom-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
 #img1 {
     max-width: 100%;
     height: auto;
@@ -82,6 +119,7 @@ body > header > nav >ul {
     border-radius: 10px;
     margin: 5px;
 }
+
 #img2 {
     max-width: 100%;
     height: auto;
@@ -89,6 +127,7 @@ body > header > nav >ul {
     border-radius: 10px;
     margin: 5px;
 }
+
 #img3 {
     max-width: 100%;
     height: auto;
@@ -96,6 +135,7 @@ body > header > nav >ul {
     border-radius: 10px;
     margin: 5px;
 }
+
 #img4 {
     max-width: 100%;
     height: auto;
@@ -103,6 +143,7 @@ body > header > nav >ul {
     border-radius: 10px;
     margin: 5px;
 }
+
 #img5 {
     max-width: 100%;
     height: auto;
@@ -110,6 +151,7 @@ body > header > nav >ul {
     border-radius: 10px;
     margin: 5px;
 }
+
 #img6 {
     max-width: 100%;
     height: auto;
@@ -136,7 +178,6 @@ body > header > nav >ul {
     max-width: 100%;
     height: auto;
     margin: 30px 30px 30px 30px;
-
 }
 
 #about > article {
@@ -154,38 +195,7 @@ body > header > nav >ul {
     padding: 0px 150px 0px 150px;
 }
 
-.sexy-button {
-    color: white;
-    text-decoration: none;
-    font-size: large;
-    background-color: rgb(120, 41, 15);
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    border: 5px solid rgb(255, 125, 0);
-    font-family: 'Lobster', cursive;
-    text-shadow: 2px 2px black;
-}
 
-.edit-form {
-    text-align: center;
-}
-
-
-.info-container {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.bottom-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-
-}
 
 #low-mileage {
     color: green;
@@ -193,4 +203,8 @@ body > header > nav >ul {
 
 #high-mileage {
     color: red;
+}
+
+#outer-body {
+    background-color: sienna;
 }
