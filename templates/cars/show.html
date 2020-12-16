@@ -4,19 +4,32 @@
 <table>
 
 <div class='info'>
-<h4>Manufacturer: {{car.manufacturer.name}}</h4>
-<h4>Model: {{car.model}}</h4>
-<h4>Engine Size: {{car.engine_size}}</h4>
-<h4>Colour: {{car.colour}}</h4>
-<h4>Mileage: {{car.mileage}}</h4>
-<h4>Year: {{car.year}}</h4>
-<h4>Purchase Cost:{{car.purchase_cost}}</h4>
-<h4>Selling Price: {{car.selling_price}}</h4>
-</div>
+
+<table>
+
+<tr><th><h4>Manufacturer</h4></th> <td>{{car.manufacturer.name}}</td></tr>
+
+<tr><th><h4>Model</h4></th> <td>{{car.model}}</h4></td>
+
+<tr><th><h4>Engine Size</h4></th> <td>{{car.engine_size}}</h4></td>
+
+<tr><th><h4>Colour</h4></th> <td>{{car.colour}}</h4></td>
+
+<tr><th><h4>Mileage</h4></th> <td>{{car.mileage}}</h4></td>
+
+<tr><th><h4>Year</h4></th> <td>{{car.year}}</h4></td>
+
+<tr><th><h4>Purchase Cost</h4></th> <td>{{car.purchase_cost}}</h4></td>
+
+<tr><th><h4>Selling Price</h4></th> <td>{{car.selling_price}}</h4></td>
 
 </table>
 
+</div>
 
-<a href='/cars/{{car.id}}/edit'>Edit details</a>
+
+
+<a href='/cars/{{car.id}}/edit' class='sexy-button'>Edit details</a>
+
 
 {% endblock %}

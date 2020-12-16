@@ -2,14 +2,21 @@
 {% block content %}
 
 <div class='info'>
-<h4>Name: {{manufacturer.name}}</h4>
-<h4>Phone: {{manufacturer.phone}}</h4>
-<h4>Email: {{manufacturer.email}}</h4>
-<h4>Website: {{manufacturer.website}}</h4>
+
+<table>
+
+<tr><th><h4>Name</h4> </th> <td>{{manufacturer.name}}</td>
+
+<tr><th><h4>Phone</h4> </th> <td>{{manufacturer.phone}}</td>
+
+<tr><th><h4>Email</h4> </th> <td>{{manufacturer.email}}</td>
+
+<tr><th><h4>Website</h4> </th> <td>{{manufacturer.website}}</td>
+
+</table>                
+
 </div>
 
-<h4>LOGO ON THE RIGHT</h4>
-
-<a href='/manufacturers/{{manufacturer.id}}/edit'>Edit details</a>
+<a href='/manufacturers/{{manufacturer.id}}/edit' class='sexy-button'>Edit details</a>
 
 {% endblock %}
