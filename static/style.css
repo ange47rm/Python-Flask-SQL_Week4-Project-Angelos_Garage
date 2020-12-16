@@ -5,6 +5,8 @@ body {
     border-radius: 20px;
     margin: 20px 150px 20px 150px;
     padding: 30px;
+    max-width: 100%;
+    height: auto;
 }
 
 table {
@@ -32,7 +34,7 @@ body > header {
     padding: 20px;
     border-radius: 10px;
     align-items: center;
-    margin: 10px 10px; 
+    margin: 10px 10px;
 }
 
 body > header > div {
@@ -44,20 +46,26 @@ body > header > div {
     border-radius: 10px;
     border: 5px solid rgb(255, 125, 0);
     text-shadow: 2px 2px black;
+    width: 100%;
+    height: auto;
 }
 
 body > header > nav {
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     padding: 10px;
     color: rgb(255, 236, 209);
+    width: 100%;
+    height: auto;
 }
 
 body > header > nav >ul {
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:space-evenly;
+    width: 100%;
+    height: auto;
 }
 
 body > header > nav > section {
@@ -194,8 +202,6 @@ body > header > nav > section {
 #header {
     padding: 0px 150px 0px 150px;
 }
-
-
 
 #low-mileage {
     color: green;
