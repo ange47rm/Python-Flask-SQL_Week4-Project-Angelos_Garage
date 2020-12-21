@@ -38,7 +38,7 @@ def select (id):
 
     if result is not None:
         manufacturer = manufacturer_repository.select(result['manufacturer_id'])
-        car = Car (manufacturer, result['model'], result['engine_size'], result['colour'], result['mileage'], result['year'], result['purchase_cost'], result['selling_price'], result['profit'], result['id'])
+        car = Car (manufacturer, result['model'], result['engine_size'], result['colour'], result['mileage'], result['year'], result['purchase_cost'], result['selling_price'], result['id'])
     return car
 
 

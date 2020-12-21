@@ -5,21 +5,25 @@
 
 <table>
 
-    <tr><th><h4>Manufacturer</h4></th> <td>{{car.manufacturer.name}}</td></tr>
+    <tr><th><h4>Manufacturer</h4></th> <th><h4>Model</h4></th><th><h4>Engine Size</h4></th><th><h4>Colour</h4></th><th><h4>Mileage</h4></th><th><h4>Year</h4></th><th><h4>Purchase Cost</h4></th><th><h4>Selling Price</h4></th><th><h4>Potential Profit</h4></th></tr>
+    
+<tr><td>{{car.manufacturer.name}}</td>
+<td>{{car.model}}</h4></td>
+<td>{{car.engine_size}}</h4></td>
+<td>{{car.colour}}</h4></td>
 
-    <tr><th><h4>Model</h4></th> <td>{{car.model}}</h4></td>
+{% if car.mileage <= 25000 %}
+<td id='low-mileage'>{{car.mileage}}</td>
+{% elif car.mileage > 150000 %}
+<td id='high-mileage'>{{car.mileage}}</td>
+{% else %}
+<td>{{car.mileage}}</td>
+{% endif %}
 
-    <tr><th><h4>Engine Size</h4></th> <td>{{car.engine_size}}</h4></td>
-
-    <tr><th><h4>Colour</h4></th> <td>{{car.colour}}</h4></td>
-
-    <tr><th><h4>Mileage</h4></th> <td>{{car.mileage}}</h4></td>
-
-    <tr><th><h4>Year</h4></th> <td>{{car.year}}</h4></td>
-
-    <tr><th><h4>Purchase Cost</h4></th> <td>{{car.purchase_cost}}</h4></td>
-
-    <tr><th><h4>Selling Price</h4></th> <td>{{car.selling_price}}</h4></td>
+<td>{{car.year}}</h4></td>
+<td>{{car.purchase_cost}}</h4></td>
+<td>{{car.selling_price}}</h4></td>
+<td id='profit'>{{car.profit}}</h4></td></tr>
 
 </table>
 
