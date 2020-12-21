@@ -7,8 +7,8 @@ import repositories.manufacturer_repository as manufacturer_repository
 
 
 def save (car):
-    sql = 'INSERT INTO cars (manufacturer_id, manufacturer, model, engine_size, colour, mileage, year, purchase_cost, selling_price) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING *'
-    values = [car.manufacturer.id, car.manufacturer.name, car.model, car.engine_size, car.colour, car.mileage, car.year, car.purchase_cost, car.selling_price]
+    sql = 'INSERT INTO cars (manufacturer_id, manufacturer, model, engine_size, colour, mileage, year, purchase_cost, selling_price, profit) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING *'
+    values = [car.manufacturer.id, car.manufacturer.name, car.model, car.engine_size, car.colour, car.mileage, car.year, car.purchase_cost, car.selling_price, car.profit]
 
     results = run_sql (sql, values)
     print (results)
@@ -24,7 +24,7 @@ def select_all ():
 
     for row in results:
         manufacturer = manufacturer_repository.select(row['manufacturer_id'])
-        car = Car (manufacturer, row['model'], row['engine_size'], row['colour'], row['mileage'], row['year'], row['purchase_cost'], row['selling_price'], row['id'])
+        car = Car (manufacturer, row['model'], row['engine_size'], row['colour'], row['mileage'], row['year'], row['purchase_cost'], row['selling_price'], row['profit'], row['id'])
         cars.append(car)
     return cars
 
@@ -38,7 +38,7 @@ def select (id):
 
     if result is not None:
         manufacturer = manufacturer_repository.select(result['manufacturer_id'])
-        car = Car (manufacturer, result['model'], result['engine_size'], result['colour'], result['mileage'], result['year'], result['purchase_cost'], result['selling_price'], result['id'])
+        car = Car (manufacturer, result['model'], result['engine_size'], result['colour'], result['mileage'], result['year'], result['purchase_cost'], result['selling_price'], result['profit'], result['id'])
     return car
 
 
@@ -54,8 +54,8 @@ def delete(id):
 
 
 def update (car):
-    sql = 'UPDATE cars SET (manufacturer_id, model, engine_size, colour, mileage, year, purchase_cost, selling_price) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s'
-    values = [car.manufacturer.id, car.model, car.engine_size, car.colour, car.mileage, car.year, car.purchase_cost, car.selling_price, car.id]
+    sql = 'UPDATE cars SET (manufacturer_id, model, engine_size, colour, mileage, year, purchase_cost, selling_price, profit) = (%s, %s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s'
+    values = [car.manufacturer.id, car.model, car.engine_size, car.colour, car.mileage, car.year, car.purchase_cost, car.selling_price, car.profit, car.id]
     
     print (values)
     run_sql (sql,values)

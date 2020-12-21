@@ -21,4 +21,4 @@ CREATE TABLE cars (
     purchase_cost INT,
     selling_price INT,
     profit INT
-);
+;
