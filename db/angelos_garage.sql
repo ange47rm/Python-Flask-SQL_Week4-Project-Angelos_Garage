@@ -19,5 +19,6 @@ CREATE TABLE cars (
     mileage INT,
     year INT,
     purchase_cost INT,
-    selling_price INT
+    selling_price INT,
+    profit INT
 );
