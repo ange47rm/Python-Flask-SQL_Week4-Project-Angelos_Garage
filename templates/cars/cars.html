@@ -4,7 +4,7 @@
 
 <div class='info-container'>
 <table>
-<tr><th>Manufacturer</th><th>Model</th><th>Engine Size</th><th>Colour</th><th>Mileage</th><th>Year</th><th>Purchase Cost</th><th>Selling Price</th><th colspan="2">Actions</th></tr>
+<tr><th>Manufacturer</th><th>Model</th><th>Engine Size</th><th>Colour</th><th>Mileage</th><th>Year</th><th>Purchase Cost</th><th>Selling Price</th><th>Profit</th><th colspan="2">Actions</th></tr>
 {% for car in cars %}
 <tr><td>{{car.manufacturer.name}}</td>
 <td><a href='/cars/{{car.id}}'>{{car.model}}</a></td>
@@ -19,7 +19,12 @@
 {% endif %}
 
 <td>{{car.year}}</td>
-<td>{{car.purchase_cost}}</td><td>{{car.selling_price}}</td>
+<td>{{car.purchase_cost}}</td>
+
+<td>{{car.selling_price}}</td>
+
+<td id='profit'>{{car.profit}}</td>
+
 <td><a href='/cars/{{car.id}}/edit'><button class='sexy-button'>Edit</button></a></td>
 <td><form action="cars/{{car.id}}/delete" method="POST"><button class='sexy-button'>Delete</button></form></td></tr></form>
 {% endfor %}

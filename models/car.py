@@ -8,5 +8,5 @@ class Car ():
         self.year = year
         self.purchase_cost = purchase_cost
         self.selling_price = selling_price
-        self.profit = self.selling_price - self.purchase_cost
+        self.profit = int(self.selling_price) - int(self.purchase_cost)
         self.id = id

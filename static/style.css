@@ -219,3 +219,7 @@ body > header > nav > section {
 #outer-body {
     background-color: sienna;
 }
+
+#profit {
+    color: green;
+}
