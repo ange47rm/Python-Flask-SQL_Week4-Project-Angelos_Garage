@@ -53,7 +53,7 @@ def edit_car(id):
 
 @car_blueprint.route ('/cars/<id>', methods=['POST'])
 def update_car(id):
-    manufacturer_id = manufacturer_repository.select(request.form['manufacturer_id'])
+    manufacturer = manufacturer_repository.select(request.form['manufacturer_id'])
     model = request.form['model']
     engine_size = request.form['engine_size']
     colour = request.form['colour']
@@ -61,7 +61,7 @@ def update_car(id):
     year = request.form['year']
     purchase_cost = request.form['purchase_cost']
     selling_price = request.form['selling_price']
-    car = Car (manufacturer_id, model, engine_size, colour, mileage, year, purchase_cost, selling_price, id)
+    car = Car (manufacturer, model, engine_size, colour, mileage, year, purchase_cost, selling_price, id)
     car_repository.update(car)
     return redirect ('/cars')
 

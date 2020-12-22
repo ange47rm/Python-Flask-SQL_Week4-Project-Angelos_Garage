@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<form class='filter-by' method="POST" action='/cars/filter-by-manufacturer'></form>
+<form class='filter-by' method="POST" action='/cars/filter-by-manufacturer/{{car.manufacturer.id}}'></form>
     <label for="search">Filter by Manufacturer</label>
     <select id='search' name="filter">
     
