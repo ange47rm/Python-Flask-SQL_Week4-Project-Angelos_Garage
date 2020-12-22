@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<table>
+    <tr><th>Manufacturer</th><th>Model</th><th>Engine Size</th><th>Colour</th><th>Mileage</th><th>Year</th><th>Purchase Cost</th><th>Selling Price</th><th>Profit</th><th colspan="2">Actions</th></tr>
+    {% for car in cars %}
+    <tr><td>{{car.manufacturer.name}}</td>
+    <td><a href='/cars/{{car.id}}'>{{car.model}}</a></td>
+    <td>{{car.engine_size}}</td><td>{{car.colour}}</td>
+    
+    {% if car.mileage <= 25000 %}
+    <td id='low-mileage'>{{car.mileage}}</td>
+    {% elif car.mileage > 150000 %}
+    <td id='high-mileage'>{{car.mileage}}</td>
+    {% else %}
+    <td>{{car.mileage}}</td>
+    {% endif %}
+    
+    <td>{{car.year}}</td>
+    <td>{{car.purchase_cost}}</td>
+    
+    <td>{{car.selling_price}}</td>
+    
+    <td id='profit'>{{car.profit}}</td>
+    
+    <td><a href='/cars/{{car.id}}/edit'><button class='sexy-button'>Edit</button></a></td>
+    <td><form action="cars/{{car.id}}/delete" method="POST"><button class='sexy-button'>Delete</button></form></td></tr></form>
+    {% endfor %}
+    
+    </table>
+
+{% endblock %}

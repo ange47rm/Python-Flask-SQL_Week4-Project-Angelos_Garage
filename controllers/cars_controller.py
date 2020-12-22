@@ -13,7 +13,8 @@ car_blueprint = Blueprint ('car', __name__)
 @car_blueprint.route ('/cars')
 def cars ():
     cars = car_repository.select_all()
-    return render_template ('cars/cars.html', page_title='CARS IN STOCK', cars=cars)
+    manufacturers = manufacturer_repository.select_all()
+    return render_template ('cars/cars.html', page_title='CARS IN STOCK', cars=cars, all_manufacturers=manufacturers)
 
 
 @car_blueprint.route ('/cars/<id>')
@@ -69,3 +70,9 @@ def update_car(id):
 def delete_car(id):
     car_repository.delete(id)
     return redirect('/cars')
+
+
+@car_blueprint.route ('/cars/filter-by-manufacturer/<manufacturer_id>')
+def filter_by_manufacturer (manufacturer_id):
+    cars_filtered = car_repository.select_cars_by_manufacturer(manufacturer_id)
+    return render_template ('cars/cars-filter.html', cars=cars_filtered)

@@ -42,6 +42,21 @@ def select (id):
     return car
 
 
+def select_cars_by_manufacturer (id):
+    cars = []
+
+    sql = 'SELECT * FROM cars WHERE manufacturer_id = %s'
+    value = [id]
+    results = run_sql(sql, value)
+
+    for row in results:
+        manufacturer = manufacturer_repository.select(row['manufacturer_id'])
+        car = Car (manufacturer, row['model'], row['engine_size'], row['colour'], row['mileage'], row['year'], row['purchase_cost'], row['selling_price'], row['id'])
+        cars.append(car)
+    print (results)
+    return cars
+
+
 def delete_all ():
     sql = 'DELETE FROM cars'
     run_sql (sql)

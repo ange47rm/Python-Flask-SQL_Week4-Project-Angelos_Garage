@@ -126,6 +126,12 @@ body > header > nav > section {
     justify-content: center;
 }
 
+.filter-by {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #img1 {
     max-width: 100%;
     height: auto;

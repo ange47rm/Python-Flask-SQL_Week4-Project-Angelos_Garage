@@ -2,6 +2,17 @@
 {% block content %}
 
 
+<form class='filter-by' method="POST" action='/cars/filter-by-manufacturer'></form>
+    <label for="search">Filter by Manufacturer</label>
+    <select id='search' name="filter">
+    
+    {% for manufacturer in all_manufacturers %}
+    <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
+    {% endfor %}</select>
+    
+    <button type="submit" class='sexy-button'>Apply filter</button>
+</form>
+
 <div class='info-container'>
 <table>
 <tr><th>Manufacturer</th><th>Model</th><th>Engine Size</th><th>Colour</th><th>Mileage</th><th>Year</th><th>Purchase Cost</th><th>Selling Price</th><th>Profit</th><th colspan="2">Actions</th></tr>
