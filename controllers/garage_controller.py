@@ -10,6 +10,7 @@ import repositories.manufacturer_repository as manufacturer_repository
 
 garage_blueprint = Blueprint ('garage', __name__)
 
+# Returns the home page
 @garage_blueprint.route ('/')
 def home ():
     return render_template ('index.html', page_title='STOCK MANAGEMENT SYSTEM')
